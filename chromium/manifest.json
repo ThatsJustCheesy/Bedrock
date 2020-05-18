@@ -1,0 +1,28 @@
+{
+  "name": "Bedrock",
+  "version": "1.0.0",
+  "description": "No more rabbit holes.",
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "exclude_matches": [
+        "*://*/search",
+        "*://duckduckgo.com/*",
+        "*://startpage.com/sp/search"
+      ],
+      "js": ["obscure.js"]
+    }
+  ],
+  "browser_action": {
+    "default_title": "Toggle Bedrock"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "manifest_version": 2
+}
